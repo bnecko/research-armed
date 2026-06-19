@@ -16,6 +16,10 @@ in your task prompt; the condensed version here holds if anything is missing. Lo
 actually live: regulator actions, litigation, retraction and replication databases, contrary
 meta-analyses, substantive debunks, expiry of efficacy windows.
 
+Scale your breadth to the effort level in your task prompt: at Medium, pull the dozen most load-bearing
+sources; at High or Max, work the full channel list with several queries each past page one (or mine the
+corpus the orchestrator hands you), toward the stated source target.
+
 For each objection, state the evidence, grade the source (independence I1–I5, evidence type E1–E5),
 rate it decisive / strong / suggestive / weak, and state exactly what would defeat it. A weak objection
 you flag as weak costs you nothing; a weak objection you oversell will be struck and will damage your

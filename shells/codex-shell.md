@@ -16,16 +16,21 @@ and `reference/40-verdict-scale.md` when you reach those phases.
 
 ## Orchestrate
 
+First settle effort (see Effort below): ask the user Medium / High / Max unless they already signalled a
+level — it sets how wide you search.
+
 1. **Scope.** Act as the Scoper (`reference/10-personas.md`): restate the request as a neutral claim,
-   record the user's apparent desired answer, and either ask 1–3 clarifying questions or proceed on a
-   stated default scope.
+   record the user's apparent desired answer, and either proceed on a stated default scope or, only if
+   genuinely ambiguous, ask one clarifying question.
 2. **Check capability.** If you can start subagents, spawn one per research vector — Prosecutor,
    Defender, Field Investigator. Subagents start fresh and cannot read this skill's `reference/` files,
-   so copy each vector's mandate (`reference/10-personas.md`) and the grading rubric
-   (`reference/20-source-grading.md`) into its task prompt; then collect the passes and run a Source
-   Grader pass over every cited source. **If subagents are unavailable, run the same vectors yourself,
-   sequentially, each as a labelled in-character pass, reading the reference files directly.** The
-   output is identical; only the executor changes.
+   so copy each vector's mandate (`reference/10-personas.md`), the grading rubric
+   (`reference/20-source-grading.md`), and the chosen effort level and source target into its task
+   prompt. At High and Max, also run one searcher per channel (`reference/00-overview.md`), several
+   queries each past page one, dedupe by URL to the target, and hand that corpus to the vectors. Collect
+   the passes and run a Source Grader pass over the corpus. **If subagents are unavailable, do the same
+   sweep and vectors yourself, sequentially, reading the reference files directly.** The output is
+   identical; only the executor changes.
 3. **Debate.** Run the round in `reference/30-debate-round.md`. You are the orchestrator: collect each
    pass, compile the digest with contradictions named, relay it back, and collect rebuttals. The roles
    never talk to each other directly — every exchange goes through you.
@@ -39,8 +44,11 @@ Use web search and the browser plugin during the evidence passes; go past the fi
 every source with `reference/20-source-grading.md`. With no access, reason from the provided material,
 add an EVIDENCE GAPS note, and cap confidence at Medium.
 
-## Depth
+## Effort
 
-You choose the depth from the question — never ask the user to pick a mode. Quick by default (one debate
-round, load-bearing sources); go deep on your own (real subagent fan-out where available, more sources,
-a possible second debate round) for high-stakes decisions or when quick mode returns low confidence.
+Before researching, ask the user one question: which effort level — Medium, High, or Max? Skip the ask
+only if they already named or signalled one ("quick/deep/heavy/exhaustive/max"); an explicit "heavy" or
+"max" overrides everything, even on a trivial task. Definitions and the search-channel list are in
+`reference/00-overview.md`: Medium ≈ 30–60 sources examined, High ≈ 300+ across all channels, Max ≈ 600+
+loop-until-dry. At High and Max, fan out across the channels (subagents if available, else many
+sequential searches), dedupe to the target, then run the adversarial layer over that corpus.

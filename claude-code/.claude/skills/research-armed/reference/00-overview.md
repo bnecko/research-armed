@@ -47,18 +47,38 @@ middle — **V3, a real core wrapped in marketing**. The verdict is the level wh
 are actually met, plus the specific evidence that would move it up or down. Definitions and the
 anti-flattery / anti-denial checks live in `40-verdict-scale.md`; the output shape in `50-output-contract.md`.
 
-## Depth — you choose it, never the user
+## Effort: ask first — Medium, High, or Max
 
-Pick the depth yourself from the question. Never ask the user to choose a mode, turn anything on, or
-learn the protocol; they supply only the subject.
+Before researching, ask the user one question: which effort level — Medium, High, or Max? Skip the
+question only when they already named or signalled a level ("quick", "deep", "heavy", "exhaustive",
+"max"), and an explicit instruction to go heavy overrides everything — run heavy even on a small task.
 
-- **Quick (default).** ~5–12 sources, one debate round. The right call for most questions.
-- **Deep.** 20+ sources, real parallel agents where supported, the Field Investigator exhausts its
-  source list, up to two debate rounds. Switch to it on your own whenever the decision looks high-stakes
-  (health, money, anything hard to reverse) or quick mode lands at low confidence.
-- **Auto-escalation.** If the search turns up no independent (I4+) source either way, that is itself a
-  finding: return a provisional verdict marked *"marketing-saturated information space — low independent
-  signal."* The absence of independent evidence is evidence about the marketing.
+- **Medium.** Fast calibrated read: ~30–60 sources examined, ~12–20 cited. The three vectors, one
+  debate round. Minutes.
+- **High.** Broad sweep: 300+ sources examined, ~30–50 cited. Work the full channel list below, several
+  queries per channel, dedupe to the target before grading. One debate round (a second only if a
+  decisive contradiction is still live).
+- **Max.** Exhaustive: 600+ sources, loop-until-dry — keep sweeping each channel until two consecutive
+  rounds surface nothing new. ~50–80 cited, two debate rounds where contradictions remain.
 
-Run the whole thing on the user's plain question: scope it yourself (`10-personas.md`), research, debate
+Volume feeds the independence filter; it does not replace it. Scanning 300 vendor pages and citing them
+is the exact failure this tool exists to prevent. Cast wide to FIND the rare independent and adversarial
+sources, then cite the load-bearing ones; the marketing-saturated bulk shows up only as the
+marketing-vs-independent split.
+
+### Search channels — work them all at High and Max
+
+Regulators and legal (FTC, FDA, ASA, NAD, court filings, recalls); systematic reviews and meta-analyses
+(Cochrane, PubMed); primary trials and preprints; standards bodies and professional associations;
+independent testing labs and consumer orgs (Wirecutter, Consumer Reports, Which?, Stiftung Warentest);
+Reddit / Hacker News / specialist forums (sort by controversial and old); complaint and return boards
+(BBB, Trustpilot, ConsumerAffairs, PissedConsumer); teardown and repair (iFixit, repair forums);
+competitor claims and comparison filings; investigative and trade press; replication and retraction
+databases; and the second-page-onward long tail nobody optimized.
+
+Auto-escalation: if even a wide sweep finds no independent (I4+) source either way, say so and mark the
+space *"marketing-saturated — low independent signal."* The absence of independent evidence is itself a
+finding.
+
+Run on the user's plain question: confirm effort, scope it yourself (`10-personas.md`), sweep, debate
 (`30-debate-round.md`), and adjudicate.

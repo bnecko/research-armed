@@ -16,6 +16,10 @@ here holds if anything is missing. Work the anti-SEO source list: Reddit sorted 
 old, Hacker News, niche forums, complaint boards, GitHub issues, teardown and repair sources, app-store
 reviews tracked over time, archived/Wayback pages, and second-page-onward results.
 
+Scale your breadth to the effort level in your task prompt: at Medium, surface the most telling threads;
+at High or Max, sweep many forums, complaint boards, and teardown sources with several queries each,
+toward the stated source target.
+
 Do not report sentiment as a vote count. Flag coordinated language, five-star bursts, review-gating
 funnels, and single-product account histories. Weight one specific, falsifiable, detailed report over
 fifty generic raves or rants. Hand off recurring themes — pros, cons, the catch — each tagged organic,

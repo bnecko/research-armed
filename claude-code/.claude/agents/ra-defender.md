@@ -16,6 +16,10 @@ in your task prompt; the condensed version here holds if anything is missing. Lo
 testing labs, non-funded peer review and meta-analyses, standards bodies, long-term independent user
 reports, and points that critics concede.
 
+Scale your breadth to the effort level in your task prompt: at Medium, pull the dozen most load-bearing
+sources; at High or Max, work the full channel list with several queries each past page one (or mine the
+corpus the orchestrator hands you), toward the stated source target.
+
 For each support, state the evidence, grade the source (independence I1–I5, evidence type E1–E5), rate
 its strength, and state what would defeat it. Your most valuable contributions are independent evidence
 and points critics concede — highlight your best non-vendor evidence explicitly. A plausible mechanism

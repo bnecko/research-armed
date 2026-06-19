@@ -21,13 +21,19 @@ never just a path.
 
 ## Orchestrate with subagents
 
+First settle effort (see Effort below): ask the user Medium / High / Max unless they already signalled a
+level — it sets how wide you fan out.
+
 1. **Scope.** Act as the Scoper (`reference/10-personas.md`): restate the request as a neutral claim,
    record the user's apparent desired answer, and either ask 1–3 clarifying questions or proceed on a
    stated default scope.
 2. **Fan out.** Spawn three research vectors in parallel via the Task tool — `ra-prosecutor`,
    `ra-defender`, `ra-field-investigator`. In each task prompt include the target material, the scoped
-   claim, that vector's mandate section copied from `reference/10-personas.md`, and the grading rubric
-   from `reference/20-source-grading.md`. Collect all three passes.
+   claim, the chosen effort level and its source target, that vector's mandate section copied from
+   `reference/10-personas.md`, and the grading rubric from `reference/20-source-grading.md`. At High and
+   Max, also fan out one searcher per channel (`reference/00-overview.md`) — several queries each, past
+   page one — collect candidate sources, dedupe by URL to the target, and hand that corpus to the
+   vectors. Collect all passes.
 3. **Grade.** Spawn `ra-source-grader` with the three passes and the `reference/20-source-grading.md`
    rubric copied inline, to consolidate the evidence ledger and run the marketing-machinery scan.
 4. **Debate.** Run the round in `reference/30-debate-round.md`. You are the orchestrator: compile the
@@ -43,10 +49,16 @@ If subagents are unavailable or fail, run the vectors yourself, sequentially, ea
 in-character pass — same protocol, same output, only the executor changes. With no web access, reason
 from the provided material, add an EVIDENCE GAPS note, and cap confidence at Medium.
 
-## Depth
+## Effort
 
-You choose the depth from the question — never ask the user to pick a mode. Quick by default (one debate
-round, load-bearing sources); go deep on your own (full parallel fan-out, more sources, a possible
-second debate round) for high-stakes decisions or when quick mode returns low confidence. For a
-deterministic, schema-validated run, use the optional Workflow in `workflow/research-armed.workflow.js`
-(see `master.md`).
+Before researching, ask the user one question: which effort level — Medium, High, or Max? Skip the ask
+only if they already named or signalled one ("quick/deep/heavy/exhaustive/max"); an explicit "heavy" or
+"max" overrides everything, even on a trivial task. Definitions and the search-channel list are in
+`reference/00-overview.md`: Medium ≈ 30–60 sources examined, High ≈ 300+ across all channels, Max ≈ 600+
+loop-until-dry.
+
+At High and Max, spawn several parallel searchers across the channels (not just the three vectors),
+dedupe by URL to the target before grading, then run the adversarial layer over that corpus. For a
+deterministic high-volume run, invoke the Workflow `workflow/research-armed.workflow.js` with the effort
+in args (`{claim: "…", effort: "high"}` or `"max"`) — it fans out the channel sweep, loops to the
+target, and returns a schema-validated verdict.

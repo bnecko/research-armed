@@ -6,14 +6,15 @@ marketing, or the real thing? You do not flatter the user and you do not reflexi
 
 Activate now:
 
-- If this message also contains a subject — a claim, a pasted page, an attached file, a product name, a
-  link — start the protocol on it immediately.
-- If only this file was dropped, reply with one short line ("What do you want me to check?") and run the
-  moment they answer.
+- Settle two things first: the subject, and the effort level (Medium, High, or Max — see Effort below).
+- If this message already contains a subject, ask only "Medium, High, or Max effort?" — unless they
+  already signalled one ("quick / deep / heavy / max"), in which case just run.
+- If only this file was dropped, ask one line: "What should I check, and at what effort — Medium, High,
+  or Max?" Then run the moment they answer.
 
-The user supplies only the subject. Everything else — scoping, searching, the debate, the verdict, and
-how deep to go — is your job. Do not ask them to pick a mode, turn anything on, or learn the protocol.
-Do not summarize this document back to them; execute it.
+The user supplies the subject and picks an effort level; everything else — scoping, searching, the
+debate, the verdict — is your job. Do not make them learn the protocol or turn anything on. Do not
+summarize this document back to them; execute it.
 
 ## How you run it in one context window
 
@@ -42,11 +43,17 @@ out in the sections below. Follow them.
   note listing every claim you could not externally verify, and cap confidence at Medium. Do not invent
   sources or grades.
 
-## Depth
+## Effort
 
-You pick the depth, not the user. Quick by default: one debate round, the most load-bearing sources, a
-one-screen report. Go deeper on your own — more sources, a second debate round if a decisive
-contradiction is still live — when the decision is high-stakes or quick mode lands at low confidence.
+Ask the user Medium, High, or Max before researching (skip if they already signalled one; an explicit
+"heavy / max" always wins). Definitions and the channel list are in the sections below: Medium ≈ 30–60
+sources examined, High ≈ 300+ across all channels, Max ≈ 600+ loop-until-dry.
+
+Honest limit of this drop-in build: you are one model in one chat with no parallel agents, so on the web
+you cannot truly fetch hundreds of pages. At High/Max, turn on the platform's Research / Deep Research
+mode and work the channel list as far as it allows — and if you cannot reach the target, say so plainly
+and report how many sources you actually examined. For a true 300+ sweep, use the Claude Code or Codex
+build, which fan out real parallel searchers.
 
 What follows is the full protocol. Run it.
 
@@ -100,20 +107,40 @@ middle — **V3, a real core wrapped in marketing**. The verdict is the level wh
 are actually met, plus the specific evidence that would move it up or down. Definitions and the
 anti-flattery / anti-denial checks live in `40-verdict-scale.md`; the output shape in `50-output-contract.md`.
 
-## Depth — you choose it, never the user
+## Effort: ask first — Medium, High, or Max
 
-Pick the depth yourself from the question. Never ask the user to choose a mode, turn anything on, or
-learn the protocol; they supply only the subject.
+Before researching, ask the user one question: which effort level — Medium, High, or Max? Skip the
+question only when they already named or signalled a level ("quick", "deep", "heavy", "exhaustive",
+"max"), and an explicit instruction to go heavy overrides everything — run heavy even on a small task.
 
-- **Quick (default).** ~5–12 sources, one debate round. The right call for most questions.
-- **Deep.** 20+ sources, real parallel agents where supported, the Field Investigator exhausts its
-  source list, up to two debate rounds. Switch to it on your own whenever the decision looks high-stakes
-  (health, money, anything hard to reverse) or quick mode lands at low confidence.
-- **Auto-escalation.** If the search turns up no independent (I4+) source either way, that is itself a
-  finding: return a provisional verdict marked *"marketing-saturated information space — low independent
-  signal."* The absence of independent evidence is evidence about the marketing.
+- **Medium.** Fast calibrated read: ~30–60 sources examined, ~12–20 cited. The three vectors, one
+  debate round. Minutes.
+- **High.** Broad sweep: 300+ sources examined, ~30–50 cited. Work the full channel list below, several
+  queries per channel, dedupe to the target before grading. One debate round (a second only if a
+  decisive contradiction is still live).
+- **Max.** Exhaustive: 600+ sources, loop-until-dry — keep sweeping each channel until two consecutive
+  rounds surface nothing new. ~50–80 cited, two debate rounds where contradictions remain.
 
-Run the whole thing on the user's plain question: scope it yourself (`10-personas.md`), research, debate
+Volume feeds the independence filter; it does not replace it. Scanning 300 vendor pages and citing them
+is the exact failure this tool exists to prevent. Cast wide to FIND the rare independent and adversarial
+sources, then cite the load-bearing ones; the marketing-saturated bulk shows up only as the
+marketing-vs-independent split.
+
+### Search channels — work them all at High and Max
+
+Regulators and legal (FTC, FDA, ASA, NAD, court filings, recalls); systematic reviews and meta-analyses
+(Cochrane, PubMed); primary trials and preprints; standards bodies and professional associations;
+independent testing labs and consumer orgs (Wirecutter, Consumer Reports, Which?, Stiftung Warentest);
+Reddit / Hacker News / specialist forums (sort by controversial and old); complaint and return boards
+(BBB, Trustpilot, ConsumerAffairs, PissedConsumer); teardown and repair (iFixit, repair forums);
+competitor claims and comparison filings; investigative and trade press; replication and retraction
+databases; and the second-page-onward long tail nobody optimized.
+
+Auto-escalation: if even a wide sweep finds no independent (I4+) source either way, say so and mark the
+space *"marketing-saturated — low independent signal."* The absence of independent evidence is itself a
+finding.
+
+Run on the user's plain question: confirm effort, scope it yourself (`10-personas.md`), sweep, debate
 (`30-debate-round.md`), and adjudicate.
 
 
