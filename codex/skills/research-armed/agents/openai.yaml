@@ -1,0 +1,7 @@
+interface:
+  display_name: "Research-Armed"
+  short_description: "Stress-test marketing claims against real evidence"
+  default_prompt: "Use $research-armed to judge whether this product page's claims are marketing or the real thing."
+
+policy:
+  allow_implicit_invocation: true

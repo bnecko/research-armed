@@ -1,0 +1,3 @@
+# OS / editor junk only. Note: claude-code/.claude/ is the shipped skill, not local config — keep it.
+.DS_Store
+*.swp
